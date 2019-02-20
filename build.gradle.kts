@@ -37,6 +37,7 @@ dependencies {
     compile("com.fasterxml.jackson.module:jackson-module-kotlin:2.9.8")
     implementation("org.springframework.boot:spring-boot-starter-web")
     implementation("org.springframework.boot:spring-boot-starter-tomcat")
+    implementation("org.springframework.boot:spring-boot-starter-data-jpa")
    // implementation("org.springframework.boot:spring-boot-starter-security")
     implementation("javax.servlet:jstl")
     implementation("org.apache.tomcat.embed:tomcat-embed-jasper")
