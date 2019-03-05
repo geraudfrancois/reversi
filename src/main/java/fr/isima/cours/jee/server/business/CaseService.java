@@ -19,7 +19,9 @@ public class CaseService {
         this.caseRepository = caseRepository;
     }
 
-    public Integer save(Case case) {
+    public Integer save(Case case1) {
+        final CaseBean caseBean = new CaseBean();
+        caseBean.setX(case1.getX());
         return this.caseRepository.save(case.).getId();
     }
 
