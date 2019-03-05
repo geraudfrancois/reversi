@@ -4,7 +4,7 @@ public class Grille {
     private int taille;
     private Case[][] grid;
 
-    public Case getContentCase(int x, int y){
+    public Case.colour getContentCase(int x, int y){
         return grid[x][y].getContent();
     }
 
