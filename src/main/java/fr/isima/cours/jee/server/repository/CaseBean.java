@@ -19,7 +19,10 @@ public class CaseBean implements Serializable {
     private Integer y;
 
     @Column(name = "colour")
-    private Case.colour colour;
+    private Integer colour;
+
+    @Column(name = "idgrille")
+    private Integer idgrille;
 
     public Integer getId() {
         return id;
@@ -29,27 +32,35 @@ public class CaseBean implements Serializable {
         this.id = id;
     }
 
-    public int getX() {
+    public Integer getX() {
         return x;
     }
 
-    public void setX(int x) {
+    public void setX(Integer x) {
         this.x = x;
     }
 
-    public int getY() {
+    public Integer getY() {
         return y;
     }
 
-    public void setY(int y) {
+    public void setY(Integer y) {
         this.y = y;
     }
 
-    public Case.colour getColour() {
+    public Integer getColour() {
         return colour;
     }
 
-    public void setColour(Case.colour colour) {
+    public void setColour(Integer colour) {
         this.colour = colour;
+    }
+
+    public Integer getIdgrille() {
+        return idgrille;
+    }
+
+    public void setIdgrille(Integer idgrille) {
+        this.idgrille = idgrille;
     }
 }

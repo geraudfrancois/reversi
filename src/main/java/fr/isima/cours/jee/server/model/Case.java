@@ -3,31 +3,64 @@ package fr.isima.cours.jee.server.model;
 import fr.isima.cours.jee.server.repository.CaseBean;
 
 public class Case {
-    public enum colour {BLANC, NOIR, VIDE};
-    private int x;
-    private int y;
-    private colour content;
-    private CaseBean cb;
+    private Integer id;
+    private Integer x;
+    private Integer y;
+    private Integer content;
+    private Integer idGrille;
 
-    public Case(int x, int y, colour content) {
+    public Case(Integer id, Integer x, Integer y, Integer content, Integer idGrille) {
+        this.id = id;
         this.x = x;
         this.y = y;
         this.content = content;
+        this.idGrille = idGrille;
     }
 
     public Case(CaseBean cb) {
-        this.cb = cb;
+        this.id = cb.getId();
+        this.x = cb.getX();
+        this.y = cb.getY();
+        this.content = cb.getColour();
+        this.idGrille = cb.getIdgrille();
+
     }
 
-    public int getX() {
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public Integer getX() {
         return x;
     }
 
-    public int getY() {
+    public Integer getY() {
         return y;
     }
 
-    public colour getContent() {
+    public Integer getContent() {
         return content;
+    }
+
+    public Integer getIdgrille() { return idGrille; }
+
+    public void setX(Integer x) {
+        this.x = x;
+    }
+
+    public void setY(Integer y) {
+        this.y = y;
+    }
+
+    public void setContent(Integer content) {
+        this.content = content;
+    }
+
+    public void setIdGrille(Integer idGrille) {
+        this.idGrille = idGrille;
+    }
+
+    public Integer getId(){
+        return this.id;
     }
 }

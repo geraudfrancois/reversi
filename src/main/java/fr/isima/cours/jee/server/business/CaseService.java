@@ -19,10 +19,16 @@ public class CaseService {
         this.caseRepository = caseRepository;
     }
 
-    public Integer save(Case case1) {
+    public Integer save(Case c) {
         final CaseBean caseBean = new CaseBean();
-        caseBean.setX(case1.getX());
-        return this.caseRepository.save(case.).getId();
+        if(c.getId() != null){
+            caseBean.setId(c.getId());
+        }
+        caseBean.setX(c.getX());
+        caseBean.setY(c.getY());
+        caseBean.setColour(c.getContent());
+        caseBean.setIdgrille(c.getIdgrille());
+        return this.caseRepository.save(caseBean).getId();
     }
 
     public Case findById(Integer caseId){
@@ -32,15 +38,17 @@ public class CaseService {
         throw new IllegalArgumentException("No case found");
     }
 
-    public Case position(int x, int y) {
+    public Case position(Integer x, Integer y, Integer idGrille) {
         CaseBean example = new CaseBean();
         example.setX(x);
         example.setY(y);
+        example.setIdgrille(idGrille);
 
         List<CaseBean> byId = this.caseRepository.findAll(Example.of(example));
         if (byId.size() == 1) {
-            return new Case(x, y, byId.get(0).getColour());
+            return new Case(byId.get(0).getId(),x, y, byId.get(0).getColour(),example.getIdgrille());
         }
         throw new IllegalArgumentException("No case found at " + x + ", " + y);
     }
+
 }
