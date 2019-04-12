@@ -1,3 +1,10 @@
 # Template
 
-Vous trouverez ici un template pour ecrire des projets avec des jsp en Kotlin comme en Java
+Projet reversi non terminé
+* Présence d'un controller REST
+* Persistence en base
+* Déploiment via Heroku
+* Manque la partie fonctionnelle du jeu
+* Interface graphique inexistante
+
+Par Géraud François et Antoine Dumont.
